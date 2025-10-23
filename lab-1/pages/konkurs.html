@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Konkurs</title>
+    <link rel="stylesheet" href="../css/konkurs.css" />
+</head>
+<body>
+    <input type="checkbox" id="dark-mode-toggle" hidden>
+    <header class="header">
+        <h1>Zgłoszenie do konkursu plastycznego</h1>
+        <label for="dark-mode-toggle" class="dark-mode-btn" aria-label="Przełącz tryb nocny">🌗</label>
+    </header>
+    
+    
+    
+
+    <div class="konkurs">
+        <form action="https://httpbin.org/post" method="post">
+            <label>Imię:</label>
+            <input name="imie" type="text" maxlength="30" required> 
+            
+            <label>Nazwisko:</label>
+            <input name="nazwisko" type="text" maxlength="50" required>
+            
+            <label>Email:</label>
+            <input name="email" type="email" required>
+
+            <label>Miasto:</label>
+            <input name="miasto" list="lista-miast" placeholder="Wpisz lub wybierz" required>
+            <datalist id="lista-miast">
+                <option value="Warszawa">
+                <option value="Kraków">
+                <option value="Gdańsk">
+                <option value="Poznań">
+                <option value="Wrocław">
+            </datalist>
+            
+            <label>Data urodzenia:</label>
+            <input name="dataurodzenia" type="date" required>
+            
+            <label>Liczba zgłaszanych prac (od 1 do 6):</label>
+            <input name="liczbaprac" type="number" min="1" max="6" required>
+            
+            <label>Kolor wiodący prac:</label>
+            <input name="kolor" type="color" required>
+
+            <label>Kategoria pracy:</label>
+            <select id="kategoria" name="kategoria" required>
+                <option value="" disabled selected>-- wybierz kategorię --</option>
+                <option value="sport">Rysunek</option>
+                <option value="muzyka">Malarstwo</option>
+                <option value="sztuka">Grafika cyfrowa</option>
+            </select>
+          
+            <fieldset required>
+                <legend>Publikacja pracy online:</legend>
+                <label><input type="radio" name="publikacja" value="tak" required> Tak</label>
+                <label><input type="radio" name="publikacja" value="nie" required> Nie</label>
+              </fieldset>
+
+
+              <label for="zgoda"><input type="checkbox" id="zgoda" name="zgoda" required> Zgadzam się na regulamin konkursu</label>
+
+            <button type="submit">Wyślij zgłoszenie</button>
+
+        </form>
+    </div>
+</body>
+</html>
